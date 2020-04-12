@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+:root {
+	--fz: 17px;
+	--theme-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	--theme-body-bg: #f7f8fb;
+	--theme-body-txt: #323232;
+	--theme-body-txt-contrast: gold;
+	--theme-shadow-color: gainsboro;
+	--theme-shadow-values: 0px 2px 3px 0px;
+
+	--header-bg: var(--theme-body-bg);
+
+	--layout-max-width: 64em;
+	--zIndex-header: 100;
+
+	--theme-dark-elevation-0-shadow: #161616;
+	--theme-dark-elevation-0: #191919;
+	--theme-dark-elevation-1: #1f1f1f;
+	--theme-dark-elevation-2: #202020;
+	--theme-dark-elevation-3: #272727; // #2f2f2f
+	--theme-dark-elevation-4: #2c2c2c;
+	--theme-dark-elevation-5: #363636;
+	--theme-dark-body-txt: #f7f8fb;
+	--theme-card-bg: #fdfdfd;
+	--theme-card-bg-active: #e6e6e6;
+}
+
+html {
+	font-size: var(--fz);
+}
+
+body {
+	font-size: inherit;
+	margin: 0;
+	background: var(--theme-body-bg);
+	font-family: var(--theme-font-family);
+	min-height: 100vh;
+	color: var(--theme-body-txt);
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.o- {
+	&main {
+		display: grid;
+		width: 100%;
+		min-height: max-content;
+		padding-top: 1em;
+	}
+	&wrapper {
+		width: 100%;
+		max-width: var(--layout-max-width);
+		margin: 0 auto;
+		padding: 0 0.5em;
+	}
+
+	&header {
+		position: sticky;
+		top: 0;
+		min-height: 3em;
+		box-shadow: var(--theme-shadow-values) var(--theme-shadow-color);
+		background-color: var(--header-bg);
+		z-index: var(--zIndex-header);
+		&_wrapper {
+			display: grid;
+			min-height: 3rem;
+			grid-template-columns: 1fr max-content;
+			align-items: center;
+		}
+	}
+}
+
+.cue-active {
+	color: tomato;
+}
+/**
+* Specificity
+*/
+
+body {
+	&[data-theme="dark"] {
+		--theme-body-txt: #f7f8fb;
+		--theme-body-bg: var(--theme-dark-elevation-0);
+		--theme-card-bg: var(--theme-dark-elevation-1);
+		--theme-card-bg-active: var(--theme-dark-elevation-3);
+		--header-bg: var(--theme-dark-elevation-2);
+		--theme-shadow-color: var(--theme-dark-elevation-0-shadow);
+	}
+}

@@ -1,0 +1,25 @@
+{
+	"name": "sync_multimedia",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app.js",
+	"scripts": {
+		"css": "node-sass --include-path scss --watch ./src/index.scss  ./dist/index.css",
+		"js": "tsc --watch ",
+		"serv": "servor ./dist --reload --browse",
+		"ndmon-css": "nodemon -e scss --watch ./src/index.scss -x \"npm run css\"",
+		"ndmon-js": "nodemon -e js --watch ./dist/index.js -x",
+		"start:dev": "npm run serv",
+		"start": "node app.js"
+	},
+	"author": "Harley Santos Garzón",
+	"license": "MIT",
+	"devDependencies": {
+		"node-sass": "^4.13.1",
+		"servor": "^3.2.0",
+		"typescript": "^3.8.3"
+	},
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}

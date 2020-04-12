@@ -1,0 +1,20 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"strict": false,
+		"module": "ES6",
+		"sourceMap": false,
+		"strictNullChecks": true,
+		"noImplicitAny": false,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"baseUrl": "assets",
+		"rootDirs": ["./src/", "./src/libs"],
+		"outDir": "./dist/",
+		"paths": {
+			"@libs/*": ["libs/*"]
+		}
+	},
+	"include": ["**/*"],
+	"exclude": ["node_modules", "*.spec.ts"]
+}

@@ -49,6 +49,23 @@ a {
 	color: inherit;
 }
 
+audio {
+	width: 100%;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+canvas {
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	border: 1px solid #d9d9d9;
+}
+
 .o- {
 	&main {
 		display: grid;
@@ -76,6 +93,14 @@ a {
 			grid-template-columns: 1fr max-content;
 			align-items: center;
 		}
+	}
+}
+
+.c- {
+	&figure {
+		max-width: max-content;
+		display: inline-flex;
+		margin: 0;
 	}
 }
 

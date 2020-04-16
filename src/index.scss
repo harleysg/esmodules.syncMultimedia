@@ -104,6 +104,11 @@ canvas {
 	}
 }
 
+.u-grid {
+	display: grid;
+	grid-template: auto / repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .cue-active {
 	color: tomato;
 }
